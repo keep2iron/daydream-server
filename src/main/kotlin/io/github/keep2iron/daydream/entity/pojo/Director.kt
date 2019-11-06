@@ -1,4 +1,4 @@
-package io.github.keep2iron.daydream.entity
+package io.github.keep2iron.daydream.entity.pojo
 
 import javax.persistence.*
 

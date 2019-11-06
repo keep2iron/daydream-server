@@ -18,6 +18,9 @@ class RankController {
     @Autowired
     lateinit var movieRepository: MovieRepository
 
+    /**
+     * 推荐排行
+     */
     @RequestMapping("/rank/recommendRanks", method = [RequestMethod.GET, RequestMethod.POST])
     fun queryRankList(): BaseResponse<List<Rank>> {
         val ranks = mutableListOf<Rank>()

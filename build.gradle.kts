@@ -1,12 +1,11 @@
-import com.google.protobuf.gradle.*
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
 	id("org.springframework.boot") version "2.1.8.RELEASE"
 	id("io.spring.dependency-management") version "1.0.8.RELEASE"
-	id("com.google.protobuf") version "0.8.3"
-	kotlin("jvm") version "1.2.71"
-	kotlin("plugin.spring") version "1.2.71"
+	id("org.jetbrains.kotlin.plugin.jpa") version "1.3.50"
+	kotlin("jvm") version "1.3.50"
+	kotlin("plugin.spring") version "1.3.50"
 }
 
 group = "io.github.keep2iron"
@@ -26,9 +25,6 @@ dependencies {
 	runtimeOnly("mysql:mysql-connector-java")
 
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-
-	implementation("com.google.protobuf:protobuf-java:3.4.0")
-	implementation("com.googlecode.protobuf-java-format:protobuf-java-format:1.4")
 }
 
 tasks.withType<KotlinCompile> {
@@ -37,14 +33,3 @@ tasks.withType<KotlinCompile> {
 		jvmTarget = "1.8"
 	}
 }
-
-//protobuf {
-//	this.protobuf.protoc({
-//
-//	})
-//	protoc {
-//		// Download from repositories
-//		artifact = 'com.google.protobuf:protoc:3.4.0'
-//		generatedFilesBaseDir = "$projectDir/src"
-//	}
-//}

@@ -1,5 +1,8 @@
-package io.github.keep2iron.daydream.entity
+package io.github.keep2iron.daydream.entity.pojo
 
+import io.github.keep2iron.daydream.entity.pojo.MovieCover
+import io.github.keep2iron.daydream.entity.pojo.MovieTag
+import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -33,7 +36,27 @@ data class Movie(
          * 电影年份
          */
         @Column(name = "Year")
-        val year: Int = 0
+        val year: Int = 0,
+
+        /**
+         * 描述
+         */
+        @Column(name = "Description")
+        val description: String?,
+
+        /**
+         * 封面
+         */
+        @OneToMany
+        @JoinColumn(name = "MovieCoverID")
+        val movieCovers: List<MovieCover>? = null,
+
+        /**
+         * 电影Tag
+         */
+        @OneToMany
+        @JoinColumn(name = "MovieTagID")
+        val movieTag: List<MovieTag>? = null
 
 
 )

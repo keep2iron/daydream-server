@@ -2,7 +2,7 @@ package io.github.keep2iron.daydream.controller
 
 import io.github.keep2iron.daydream.core.APIController
 import io.github.keep2iron.daydream.entity.dto.BaseResponse
-import io.github.keep2iron.daydream.entity.Person
+import io.github.keep2iron.daydream.entity.pojo.Person
 import io.github.keep2iron.daydream.repository.PersonRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.RequestMapping
